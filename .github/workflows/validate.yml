@@ -20,7 +20,10 @@ jobs:
       - name: Install Python dependencies
         run: python -m pip install -r zstack-support/requirements.txt --target .deps
       - name: Validate Python dependencies
-        run: python zstack-support/scripts/validate-python-dependencies.py --target .deps
+        shell: powershell
+        run: |
+          $env:PYTHONPATH = (Resolve-Path .deps).Path
+          python zstack-support/scripts/validate-python-dependencies.py --target .deps
       - name: Run plugin tests
         shell: powershell
         run: |

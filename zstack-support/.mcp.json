@@ -1,0 +1,38 @@
+{
+  "mcpServers": {
+    "github": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "headers": {
+        "Authorization": "Bearer ${GITHUB_MCP_TOKEN}"
+      },
+      "enabled": true
+    },
+    "zstack-bbs-support": {
+      "type": "http",
+      "url": "http://172.18.250.27:8768/mcp",
+      "headers": {
+        "Accept": "application/json, text/event-stream",
+        "Authorization": "${ZSTACK_BBS_AUTHORIZATION}"
+      },
+      "enabled": true
+    },
+    "tavily_hikari": {
+      "type": "http",
+      "url": "https://tavily.zopen1.com/mcp",
+      "headers": {
+        "Authorization": "Bearer ${TAVILY_HIKARI_TOKEN}"
+      },
+      "enabled": true
+    },
+    "zstack_atlassian_shared": {
+      "type": "http",
+      "url": "http://172.18.250.27:3340/mcp",
+      "headers": {
+        "Accept": "application/json, text/event-stream",
+        "Authorization": "${ATLASSIAN_AUTHORIZATION}"
+      },
+      "enabled": true
+    }
+  }
+}

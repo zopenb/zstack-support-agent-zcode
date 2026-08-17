@@ -1,0 +1,24 @@
+# Local and generated credentials
+.env
+.env.*
+*.token
+*.secret
+
+# Runtime state and caches
+.zcode/
+node_modules/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Generated documents and temporary output
+output/
+tmp/
+*.tmp
+~$*.docx
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

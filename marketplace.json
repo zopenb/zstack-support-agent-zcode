@@ -1,0 +1,14 @@
+{
+  "name": "zstack-support-local",
+  "description": "ZStack Support Agent adapted for ZCode with environment-backed MCP credentials.",
+  "plugins": [
+    {
+      "name": "zstack-support",
+      "source": "./zstack-support",
+      "version": "2.9.6",
+      "description": "Evidence-first ZStack support analysis, source verification, document generation, redaction, and MCP connector diagnostics.",
+      "category": "Engineering",
+      "displayName": "ZStack Support Agent for ZCode"
+    }
+  ]
+}

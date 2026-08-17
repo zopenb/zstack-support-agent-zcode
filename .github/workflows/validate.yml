@@ -1,0 +1,28 @@
+name: Validate ZCode plugin
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate manifests and skills
+        shell: powershell
+        run: ./zstack-support/scripts/validate-zcode-plugin.ps1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: zstack-support/requirements.txt
+      - name: Install Python dependencies
+        run: python -m pip install -r zstack-support/requirements.txt --target .deps
+      - name: Validate Python dependencies
+        run: python zstack-support/scripts/validate-python-dependencies.py --target .deps
+      - name: Run plugin tests
+        shell: powershell
+        run: |
+          $env:PYTHONPATH = (Resolve-Path .deps).Path
+          python -m unittest discover -s zstack-support/tests -v

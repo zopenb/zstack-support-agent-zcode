@@ -1,0 +1,9 @@
+{
+  "name": "zstack-support",
+  "version": "2.9.6",
+  "description": "Evidence-first ZStack support workbench: event analysis, source verification, change proposals, fault reports, audience-aware redaction, and connector diagnostics backed by BBS/Jira/Confluence/GitHub MCP.",
+  "author": {
+    "name": "ZStack Support Team"
+  },
+  "skills": "skills"
+}
